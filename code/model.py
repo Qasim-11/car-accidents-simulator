@@ -124,7 +124,7 @@ class AccidentSimulator(nn.Module):
         self.image_encoder = ImageEncoder()
         self.text_encoder = TextEncoder()
         self.fusion = MultiModalFusion(image_feat_dim=1792, text_feat_dim=768, hidden_dim=512)
-        self.decoder = SequenceDecoder(input_dim=512, hidden_dim=512, output_dim=(4))  # 3 controls: steering, throttle, brake
+        self.decoder = SequenceDecoder(input_dim=512, hidden_dim=512, output_dim=(4))  # 2 controls: speed steering. For 2 cars so that's why it's 4  
 
     def forward(self, images, text):
         image_features = self.image_encoder(images)
