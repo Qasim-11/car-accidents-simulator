@@ -125,3 +125,9 @@ for i in range(240 * 10):  # Simulate for 5 seconds at 240 FPS
 
 
 torch.save(cars_parameters, f'cars_parameters{n}.pt')
+# Save pos1, start_orientation1 locally:
+torch.save(pos1, f'pos1_{n}.pt')
+torch.save(start_orientation1, f'start_orientation1_{n}.pt')
+
+torch.save(pos2, f'pos2_{n}.pt')
+torch.save(start_orientation2, f'start_orientation2_{n}.pt')
