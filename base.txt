@@ -1,0 +1,49 @@
+            +-------------------+       +---------------------+
+            | Multi-view Images |       |  Accident Text      |
+            |(8 angles, preproc)|       | (Tokenization, etc.)|
+            +---------+---------+       +----------+----------+
+                      |                             |
+                      v                             v
+         +-----------------------+       +------------------------+
+         |  Shared CNN Encoder   |       |      Text Encoder      |
+         |  (ResNet/EfficientNet)|       |      (Transformer)     |
+         +-----------+-----------+       +-----------+------------+
+                     |                               |
+                     v                               v
+          +---------------------+         +------------------------+
+          | Multi-View Fusion   |         | Textual Representation |
+          | (Self-Attention,    |         |                        |
+          |  Concatenation+MLP) |         +-----------+------------+
+          +-----------+---------+                     |
+                      |                               |
+                      +--------------+----------------+
+                                     |
+                                     v
+                           +--------------------+
+                           |  Multi-Modal Fusion|
+                           | (Concatenation/    |
+                           | Cross-Attention)   |
+                           +----------+---------+
+                                      |
+                                      v
+                         +------------------------+
+                         |Accident Representation |
+                         |                        |
+                         +------------+-----------+
+                                     |
+                                     v
+                          +----------------------+
+                          | Sequence Decoder     |
+                          | (RNN/Transformer)    |
+                          | Generates Control    |
+                          | Instructions         |
+                          +----------+-----------+
+                                     |
+                                     v
+                          +----------------------+
+                          |  Physics Engine      |
+                          | (Simulation Replay)  |
+                          +----------------------+
+
+
+
